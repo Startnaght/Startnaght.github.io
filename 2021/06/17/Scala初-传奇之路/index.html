@@ -1,225 +1,32 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Scala初&amp;&amp;传奇之路 | Oysterの糖果屋</title><meta name="keywords" content="Spark"><meta name="author" content="oyster,507566350@qq.com"><meta name="copyright" content="oyster"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Scala 简介 Scala是Scalable Language的简写，是一门多范式的编程语言，由联邦理工学院洛桑（EPFL）的Martin Odersky于2001年基于Funnel的工作开始设计  设计初衷是要集成面向对象编程和函数式编程的各种特性。  因此Scala是一种纯面向对象的语言，每个值都是对象。同时Scala也是一种函数式语言，其函数也能当成值来使用。由于 Scala整合了面向对象">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Scala初&amp;&amp;传奇之路">
-<meta property="og:url" content="http://yoursite.com/2021/06/17/Scala%E5%88%9D-%E4%BC%A0%E5%A5%87%E4%B9%8B%E8%B7%AF/index.html">
-<meta property="og:site_name" content="Oysterの糖果屋">
-<meta property="og:description" content="Scala 简介 Scala是Scalable Language的简写，是一门多范式的编程语言，由联邦理工学院洛桑（EPFL）的Martin Odersky于2001年基于Funnel的工作开始设计  设计初衷是要集成面向对象编程和函数式编程的各种特性。  因此Scala是一种纯面向对象的语言，每个值都是对象。同时Scala也是一种函数式语言，其函数也能当成值来使用。由于 Scala整合了面向对象">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg">
-<meta property="article:published_time" content="2021-06-17T06:28:14.000Z">
-<meta property="article:modified_time" content="2021-06-21T01:04:47.742Z">
-<meta property="article:author" content="oyster">
-<meta property="article:tag" content="Spark">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg"><link rel="shortcut icon" href="/img/%E9%9B%AA%E5%B1%B1.png"><link rel="canonical" href="http://yoursite.com/2021/06/17/Scala%E5%88%9D-%E4%BC%A0%E5%A5%87%E4%B9%8B%E8%B7%AF/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
-    },
-    fancybox: {
-      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
-    }
-  },
-  isPhotoFigcaption: true,
-  islazyload: false,
-  isanchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2021-06-21 09:04:47'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
+extends includes/layout.pug
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+    article#article-container.post-content!=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
         
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    })(window)</script><link rel="stylesheet" href="/css/iconf/custom.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_2784788_hxr8d9fpmt8.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Oysterの糖果屋" type="application/atom+xml">
-</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/blog.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw incn icon-shuye-"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw incn icon-yezi-"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw icon icon-yezi-3"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/List/Music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/List/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/back/"><i class="fa-fw iconfont icon-jilu"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Oysterの糖果屋</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw incn icon-shuye-"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw incn icon-yezi-"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw icon icon-yezi-3"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/List/Music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/List/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/back/"><i class="fa-fw iconfont icon-jilu"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Scala初&amp;&amp;传奇之路</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-17T06:28:14.000Z" title="发表于 2021-06-17 14:28:14">2021-06-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-06-21T01:04:47.742Z" title="更新于 2021-06-21 09:04:47">2021-06-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Spark/">Spark</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Spark/Scala/">Scala</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Scala初&amp;&amp;传奇之路"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Scala-简介"><a href="#Scala-简介" class="headerlink" title="Scala 简介"></a>Scala 简介</h1><blockquote>
-<p>Scala是Scalable Language的简写，是一门多范式的编程语言，由联邦理工学院洛桑（EPFL）的Martin Odersky于2001年基于Funnel的工作开始设计</p>
-<blockquote>
-<p>设计初衷是要集成面向对象编程和函数式编程的各种特性。</p>
-<blockquote>
-<p>因此Scala是一种纯面向对象的语言，每个值都是对象。同时Scala也是一种函数式语言，其函数也能当成值来使用。由于 Scala整合了面向对象语言和函数式编程的特性，Scala相对于Java、C#、C++等其他语言更加简洁。<br/><br>Scala源代码被编译成Java字节码<br>所以它可以运行于JVM之上，并可以调用现有的Java类库。Scala一开始就打算基于Java的生态系统发展自身，而这令Scala受益匪浅。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="Scala-特性"><a href="#Scala-特性" class="headerlink" title="Scala 特性"></a>Scala 特性</h2><blockquote>
-<p>1、面向对象<br>2、函数式编程<br>3、静态类型<br>4、Scala是可被扩展的 (提供了一个独特的语言机制来实现)</p>
-</blockquote>
-<blockquote>
-<p>4.1、隐式类： 允许给已有的类型添加扩展方法</p>
-<blockquote>
-<p>隐式类是在scala 2.10中引入的，隐式类指的是用implicit关键字修饰的类。在对应的作用域内，带有这个关键字的类的主构造函数可用于隐式转换。</p>
-</blockquote>
-</blockquote>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">Helpers</span> </span>&#123;</span><br><span class="line">  <span class="keyword">implicit</span> <span class="class"><span class="keyword">class</span> <span class="title">IntWithTimes</span>(<span class="params">x: <span class="type">Int</span></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">times</span></span>[<span class="type">A</span>](f: =&gt; <span class="type">A</span>): <span class="type">Unit</span> = &#123;</span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">loop</span></span>(current: <span class="type">Int</span>): <span class="type">Unit</span> =</span><br><span class="line">        <span class="keyword">if</span>(current &gt; <span class="number">0</span>) &#123;</span><br><span class="line">          f</span><br><span class="line">          loop(current - <span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      loop(x)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>定义了一个隐式类IntWithTimes， 它有一个接收Int类型的构造函数，和一个times方法。那么当我们将这个类引入到我们自己的作用域时，Int类型就拥有了新的times方法  引入便可以使用</p>
-</blockquote>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; <span class="keyword">import</span> <span class="type">Helpers</span>._</span><br><span class="line"><span class="keyword">import</span> <span class="type">Helpers</span>._</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>隐式类有以下限制条件</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>1、只能在别的trait/类/对象内部定义<br>2、构造函数只能携带一个非隐式参数<br>3、在同一作用域内，不能有任何方法、成员或对象与隐式类同名,注意：这意味着隐式类不能是case class</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>4.2、字符串插值： 可以让用户使用自定义的插值器进行扩展 </br> SCala提供了三种创新插值的方法：s,f,raw</p>
-<blockquote>
-<p>字符串插值就是将变量引用直接插入处理过的字面字符中。 这是在scala2.10.0版本引入的。</p>
-</blockquote>
-</blockquote>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> name=<span class="string">&quot;James&quot;</span></span><br><span class="line">println(<span class="string">s&quot;Hello,<span class="subst">$name</span>&quot;</span>)<span class="comment">//Hello,James</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>s插值器<br>s”Hello,$name” 是待处理字符串字面，编译器会对它做额外的工作。待处理字符串字面通过“号前的字符来标示</p>
-</blockquote>
-<blockquote>
-<p>f插值器<br>在任何字符串字面前加上 f，就可以生成简单的格式化串，功能相似于其他语言中的 printf 函数。当使用 f 插值器的时候，所有的变量引用都应当后跟一个printf-style格式的字符串</p>
-</blockquote>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> height=<span class="number">1.9</span>d</span><br><span class="line"><span class="keyword">val</span> name=<span class="string">&quot;James&quot;</span></span><br><span class="line">println(<span class="string">f&quot;<span class="subst">$name</span>%s is <span class="subst">$height</span>%2.2f meters tall&quot;</span>)<span class="comment">//James is 1.90 meters tall f 插值器是类型安全的。如果试图向只支持 int 的格式化串传入一个double 值，编译器则会报错。例如：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> height:<span class="type">Double</span>=<span class="number">1.9</span>d</span><br><span class="line"></span><br><span class="line">scala&gt;<span class="string">f&quot;<span class="subst">$height</span>%4d&quot;</span></span><br><span class="line">&lt;console&gt;:<span class="number">9</span>: error: <span class="class"><span class="keyword">type</span> <span class="title">mismatch</span></span>;</span><br><span class="line"> found : <span class="type">Double</span></span><br><span class="line"> required: <span class="type">Int</span></span><br><span class="line">           <span class="string">f&quot;<span class="subst">$height</span>%4d&quot;</span></span><br><span class="line">              ^ f 插值器利用了java中的字符串数据格式。这种以%开头的格式在 [<span class="type">Formatter</span> javadoc] 中有相关概述。如果在具体变量后没有%，则格式化程序默认使用 %s（串型）格式。</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>raw 插值器<br>除了对字面值中的字符不做编码外，raw 插值器与 s 插值器在功能上是相同的</p>
-</blockquote>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scala&gt;<span class="string">s&quot;a\nb&quot;</span></span><br><span class="line">res0:<span class="type">String</span>=</span><br><span class="line">a</span><br><span class="line">b 这里，s 插值器用回车代替了\n。而raw插值器却不会如此处理。</span><br><span class="line"></span><br><span class="line">scala&gt;<span class="string">raw&quot;a\nb&quot;</span></span><br><span class="line">res1:<span class="type">String</span>=a\nb 当不想输入\n被转换为回车的时候，raw 插值器是非常实用的。</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>自定义插值器<br>在Scala中，所有处理过的字符串字面值都进行了简单编码转换。任何时候编译器遇到一个如下形式的字符串字面值：id”string content” 它都会被转换成一个StringContext实例的call(id)方法。这个方法在隐式范围内仍可用。只需要简单得 建立一个隐类，给StringContext实例增加一个新方法，便可以定义我们自己的字符串插值器。如</p>
-</blockquote>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">implicit</span> <span class="class"><span class="keyword">class</span> <span class="title">JsonHelper</span>(<span class="params">val sc:<span class="type">StringContext</span></span>) <span class="keyword">extends</span> <span class="title">AnyVal</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">json</span></span>(args:<span class="type">Any</span>*):<span class="type">JSONObject</span>=sys.error(<span class="string">&quot;TODO-IMPLEMENT&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">giveMeSomeJson</span></span>(x:<span class="type">JSONObject</span>):<span class="type">Unit</span>=...</span><br><span class="line"></span><br><span class="line">giveMeSomeJson(<span class="string">json&quot;&#123;name:<span class="subst">$name</span>,id:<span class="subst">$id</span>&#125;&quot;</span>) </span><br></pre></td></tr></table></figure>
-<blockquote>
-<blockquote>
-<p>在这个例子中，我们试图通过字符串插值生成一个JSON文本语法。隐类 JsonHelper 作用域内使用该语法，且这个JSON方法需要一个完整的实现。只不过，字符串字面值格式化的结果不是一个字符串，而是一个JSON对象。 注：JSON方法可以访问字符串的原生片段而每个表达式都是一个值。</p>
-</blockquote>
-</blockquote>
-<p>当编译器遇到”{name:name,id:name,id:id”}”，它将会被重写成如下表达式：</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="type">StringContext</span>(<span class="string">&quot;&#123;name:&quot;</span>,<span class="string">&quot;,id:&quot;</span>,<span class="string">&quot;&#125;&quot;</span>).json(name,id)</span><br></pre></td></tr></table></figure>
+    if theme.reward.enable
+      !=partial('includes/post/reward', {}, {cache: true})
 
-<p>隐类则被重写成如下形式:</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="type">JsonHelper</span>(<span class="keyword">new</span> <span class="type">StringContext</span>(<span class="string">&quot;&#123;name:&quot;</span>,<span class="string">&quot;,id:&quot;</span>,<span class="string">&quot;&#125;&quot;</span>)).json(name,id)</span><br></pre></td></tr></table></figure>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote>
-<p>可扩展的scala <a target="_blank" rel="noopener" href="https://www.cnblogs.com/flydean/p/12680354.html">https://www.cnblogs.com/flydean/p/12680354.html</a></p>
-</blockquote>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:507566350@qq.com">oyster</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2021/06/17/Scala%E5%88%9D-%E4%BC%A0%E5%A5%87%E4%B9%8B%E8%B7%AF/">http://yoursite.com/2021/06/17/Scala%E5%88%9D-%E4%BC%A0%E5%A5%87%E4%B9%8B%E8%B7%AF/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com" target="_blank">Oysterの糖果屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Spark/">Spark</a></div><div class="post_share"><div class="social-share" data-image="http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/06/22/Sparklogistics%E5%9B%9E%E5%BD%92%E4%B9%8B%E7%94%A8%E6%88%B7%E5%88%86%E7%B1%BB/"><img class="prev-cover" src="http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg" onerror="onerror=null;src='http://qufl2gk64.hb-bkt.clouddn.com/v2-25c00afbcf1370cb408278127fe45254_720w.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Sparklogistics回归之用户分类</div></div></a></div><div class="next-post pull-right"><a href="/2021/06/16/Spark%E5%88%9D-%E6%9E%B6%E6%9E%84%E5%8E%9F%E7%90%86/"><img class="next-cover" src="http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg" onerror="onerror=null;src='http://qufl2gk64.hb-bkt.clouddn.com/v2-25c00afbcf1370cb408278127fe45254_720w.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Spark初_架构原理</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/06/16/Spark初-架构原理/" title="Spark初_架构原理"><img class="cover" src="http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-16</div><div class="title">Spark初_架构原理</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/blog.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">oyster</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">殷勤昨夜三更雨，又得浮生一日凉</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Scala-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">Scala 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Scala-%E7%89%B9%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text">Scala 特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">1.1.1.</span> <span class="toc-text">参考</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/10/10/hello-world/" title="Hello World"><img src="http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg" onerror="this.onerror=null;this.src='http://qufl2gk64.hb-bkt.clouddn.com/v2-25c00afbcf1370cb408278127fe45254_720w.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/10/10/hello-world/" title="Hello World">Hello World</a><time datetime="2021-10-10T11:07:43.093Z" title="发表于 2021-10-10 19:07:43">2021-10-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/20/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E5%A4%A7%E6%95%B0%E5%AF%B9%E5%92%8C%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/" title="数组中最大数对和的最小值"><img src="http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg" onerror="this.onerror=null;this.src='http://qufl2gk64.hb-bkt.clouddn.com/v2-25c00afbcf1370cb408278127fe45254_720w.jpg'" alt="数组中最大数对和的最小值"/></a><div class="content"><a class="title" href="/2021/07/20/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E5%A4%A7%E6%95%B0%E5%AF%B9%E5%92%8C%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/" title="数组中最大数对和的最小值">数组中最大数对和的最小值</a><time datetime="2021-07-20T14:19:23.000Z" title="发表于 2021-07-20 22:19:23">2021-07-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/10/java%E6%A1%86%E6%9E%B6%E4%B9%8B-spring%E7%AE%80%E4%BB%8B/" title="java框架之-spring简介"><img src="http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg" onerror="this.onerror=null;this.src='http://qufl2gk64.hb-bkt.clouddn.com/v2-25c00afbcf1370cb408278127fe45254_720w.jpg'" alt="java框架之-spring简介"/></a><div class="content"><a class="title" href="/2021/07/10/java%E6%A1%86%E6%9E%B6%E4%B9%8B-spring%E7%AE%80%E4%BB%8B/" title="java框架之-spring简介">java框架之-spring简介</a><time datetime="2021-07-10T02:56:14.000Z" title="发表于 2021-07-10 10:56:14">2021-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/09/Http-Https%E5%8C%BA%E5%88%AB/" title="Http&amp;Https区别"><img src="http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg" onerror="this.onerror=null;this.src='http://qufl2gk64.hb-bkt.clouddn.com/v2-25c00afbcf1370cb408278127fe45254_720w.jpg'" alt="Http&amp;Https区别"/></a><div class="content"><a class="title" href="/2021/07/09/Http-Https%E5%8C%BA%E5%88%AB/" title="Http&amp;Https区别">Http&amp;Https区别</a><time datetime="2021-07-09T07:21:22.000Z" title="发表于 2021-07-09 15:21:22">2021-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/09/Linux%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/" title="Linux命令手册"><img src="http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg" onerror="this.onerror=null;this.src='http://qufl2gk64.hb-bkt.clouddn.com/v2-25c00afbcf1370cb408278127fe45254_720w.jpg'" alt="Linux命令手册"/></a><div class="content"><a class="title" href="/2021/07/09/Linux%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/" title="Linux命令手册">Linux命令手册</a><time datetime="2021-07-09T07:21:22.000Z" title="发表于 2021-07-09 15:21:22">2021-07-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('http://qufl2gk64.hb-bkt.clouddn.com/v2-ea5608a21d18aa0bdd22244cc99710d6_720w.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By oyster</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script async="async">var preloader = {
-  endLoading: () => {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loading-box').classList.add("loaded")
-  },
-  initLoading: () => {
-    document.body.style.overflow = '';
-    document.getElementById('loading-box').classList.remove("loaded")
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
 
-  }
-}
-window.addEventListener('load',()=> {preloader.endLoading()})
-setTimeout(function(){preloader.endLoading();}, 3000);</script></div><div class="js-pjax"></div><script src="/js/tag/iconfont.js"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = true;
-POWERMODE.mobile = false;
-document.body.addEventListener('input', POWERMODE);
-</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
+
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
+      
