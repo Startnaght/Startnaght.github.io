@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Oysterの糖果屋</title>
+  <title>小狐仙の桃花乡</title>
   <icon>https://www.gravatar.com/avatar/f134cc5c44704ea724b8cc60781a4b82</icon>
   
   <link href="http://yoursite.com/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>oyster</name>
+    <name>小狐仙</name>
     <email>507566350@qq.com</email>
   </author>
   
