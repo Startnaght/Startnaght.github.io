@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2021/07/20/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E5%A4%A7%E6%95%B0%E5%AF%B9%E5%92%8C%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/</loc>
-    
-    <lastmod>2021-10-18</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2021/10/10/hello-world/</loc>
     
-    <lastmod>2021-10-17</lastmod>
+    <lastmod>2021-10-27</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/index.html</loc>
     
-    <lastmod>2021-10-17</lastmod>
+    <lastmod>2021-10-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/comments/index.html</loc>
+    
+    <lastmod>2021-10-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/07/20/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E5%A4%A7%E6%95%B0%E5%AF%B9%E5%92%8C%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/</loc>
+    
+    <lastmod>2021-10-18</lastmod>
     
   </url>
   
@@ -412,13 +419,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E9%A2%98/</loc>
-    <lastmod>2021-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/categories/%E6%96%87%E5%AD%A6%E4%BD%9C%E5%93%81/%E5%8F%A4%E8%AF%97%E8%AF%8D/</loc>
     <lastmod>2021-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -426,14 +426,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/%E6%96%87%E5%AD%A6%E4%BD%9C%E5%93%81/%E8%AF%97%E9%92%9F-%E8%AF%BE%E5%A4%96%E8%A1%A5%E8%AF%BB/</loc>
+    <loc>http://yoursite.com/categories/Spark/Scala/</loc>
     <lastmod>2021-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/Spark/Scala/</loc>
+    <loc>http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E9%A2%98/</loc>
+    <lastmod>2021-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/%E6%96%87%E5%AD%A6%E4%BD%9C%E5%93%81/%E8%AF%97%E9%92%9F-%E8%AF%BE%E5%A4%96%E8%A1%A5%E8%AF%BB/</loc>
     <lastmod>2021-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
