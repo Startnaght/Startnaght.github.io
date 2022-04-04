@@ -2,7 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/link/index.html</loc>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2022-04-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/List/Music/index.html</loc>
+    
+    <lastmod>2022-04-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/List/Movie/index.html</loc>
     
     <lastmod>2022-04-04</lastmod>
     
@@ -23,21 +37,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/List/Movie/index.html</loc>
-    
-    <lastmod>2022-04-04</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
-    
-    <lastmod>2022-04-04</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/List/Music/index.html</loc>
+    <loc>http://yoursite.com/link/index.html</loc>
     
     <lastmod>2022-04-04</lastmod>
     
@@ -277,14 +277,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/Liunx%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</loc>
+    <loc>http://yoursite.com/tags/MySQL/</loc>
     <lastmod>2022-04-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/MySQL/</loc>
+    <loc>http://yoursite.com/tags/Liunx%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2022-04-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
