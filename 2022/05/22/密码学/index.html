@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>密码学 | Hiraeth</title><meta name="keywords" content="密码学"><meta name="author" content="小狐仙,507566350@qq.com"><meta name="copyright" content="小狐仙"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="安全防护密码学密码学主要的解决的问题可以分为以下三点    1、 防窃听，就是防止文件在传输过程中的被第三方读取。明信片在邮递过程中，信息可以被任何接触到的人看到，信息就泄露了。解决这个问题，最简单的办法，加一个密封的信封。这样信息在传递过程中就是安全的，其它人看不到。 2、 防伪造是指防止信息的来源被第三方伪造。传统的信件防伪方法有印章，  3、防篡改是指防止信息被第三方修改。传统的方法是使用蜡">
+<meta property="og:type" content="article">
+<meta property="og:title" content="密码学">
+<meta property="og:url" content="http://yoursite.com/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6/index.html">
+<meta property="og:site_name" content="Hiraeth">
+<meta property="og:description" content="安全防护密码学密码学主要的解决的问题可以分为以下三点    1、 防窃听，就是防止文件在传输过程中的被第三方读取。明信片在邮递过程中，信息可以被任何接触到的人看到，信息就泄露了。解决这个问题，最简单的办法，加一个密封的信封。这样信息在传递过程中就是安全的，其它人看不到。 2、 防伪造是指防止信息的来源被第三方伪造。传统的信件防伪方法有印章，  3、防篡改是指防止信息被第三方修改。传统的方法是使用蜡">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2022-05-22T11:58:21.000Z">
+<meta property="article:modified_time" content="2022-05-22T12:20:29.403Z">
+<meta property="article:author" content="小狐仙">
+<meta property="article:tag" content="密码学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/%E9%9B%AA%E5%B1%B1.png"><link rel="canonical" href="http://yoursite.com/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-22 20:20:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hiraeth" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/tx.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xingzhuangdianzhui"></use></svg><span> 小狐狸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yezi-1"></use></svg><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fenlei"></use></svg><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/List/Music/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yinle"></use></svg><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/List/Movie/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhuizhuiju"></use></svg><span> Movie</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yezi-1"></use></svg><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gufengwujianzhongguofengwenfangsibaobimaobi_huaban_huaban"></use></svg><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/back/"><svg class="icon" aria-hidden="true"><use xlink:href="#iconfont icon-jilu"></use></svg><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" onclick="btf.scrollToDest(0, 500)" data-title="欢迎光临糖果屋，愿你有愉快的一天">密码学</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xingzhuangdianzhui"></use></svg><span> 小狐狸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yezi-1"></use></svg><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fenlei"></use></svg><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/List/Music/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yinle"></use></svg><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/List/Movie/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhuizhuiju"></use></svg><span> Movie</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yezi-1"></use></svg><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gufengwujianzhongguofengwenfangsibaobimaobi_huaban_huaban"></use></svg><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/back/"><svg class="icon" aria-hidden="true"><use xlink:href="#iconfont icon-jilu"></use></svg><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">密码学</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-22T11:58:21.000Z" title="发表于 2022-05-22 19:58:21">2022-05-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-22T12:20:29.403Z" title="更新于 2022-05-22 20:20:29">2022-05-22</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="密码学"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="安全防护"><a href="#安全防护" class="headerlink" title="安全防护"></a>安全防护</h2><p>密码学<sup><a href="#fn_密码学" id="reffn_密码学">密码学</a></sup>主要的解决的问题可以分为以下三点<br>    1、 防窃听，就是防止文件在传输过程中的被第三方读取。明信片在邮递过程中，信息可以被任何接触到的人看到，信息就泄露了。解决这个问题，最简单的办法，加一个密封的信封。这样信息在传递过程中就是安全的，其它人看不到。</p>
+<pre><code>2、 防伪造是指防止信息的来源被第三方伪造。传统的信件防伪方法有印章，
+
+3、防篡改是指防止信息被第三方修改。传统的方法是使用蜡丸/火漆来包装信息，完整的蜡丸/火漆表示信息未被修改。
+
+网络中防窃听的方法是发送方把原文信息进行数字加密，传输密文，接收方只有使用秘钥才可以解开，保证信息的私密性。防伪造的方法是数字签名，发送方给信息附加一个数字签名，表明信息来源的真实性。防篡改的方式是数字摘要，对信息形成一个唯一的摘要，任何微小的原文修改都会导致数字摘要变化，从而保证信息的完整性。
+</code></pre><h2 id="加密和签名"><a href="#加密和签名" class="headerlink" title="加密和签名"></a>加密和签名</h2><p>加密和解密是一个对称操作，使用秘钥对原文进行加密得到密文，再使用同一秘钥对密文进行解密得到原文。</p>
+<p>这种使用 唯一秘钥 的加密方式叫做 对称加密 。对称加密执行效率很高，但是在网络中如何安全的传输秘钥是个问题？秘钥无法安全传输，加密就达不到防护效果。<br>下面是使用openssl工具进行对称加密的演示:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># echo &quot;123abc&quot; | openssl enc -e -aes-128-cbc -pass pass:game404 -base64 -md sha1</span><br><span class="line">U2FsdGVkX1+wwmevh948fa38juYRyBxYYcdL2rWBhMQ=</span><br><span class="line">...</span><br><span class="line"># echo &quot;U2FsdGVkX1+wwmevh948fa38juYRyBxYYcdL2rWBhMQ=&quot; | openssl enc -d -aes-128-cbc -pass pass:game404 -base64 -md sha1</span><br><span class="line">123abc</span><br></pre></td></tr></table></figure></p>
+<p>非对称加密 可以解决秘钥传输的安全问题。在非对称加密中使用一对秘钥: 私钥+公钥。私钥发送方(通常是服务端)保存，公钥通过网络对外发布，可以有多个接收方（通常是客户端）。客户端使用公钥加密后的密文，只能够在服务端使用私钥进行解密，即使再使用公钥也无法完成密文解密。<br>当然也可以反过来，使用私钥“加密”信息，公钥“解密”信息。但是由于公钥有多个，任何持有公钥的客户端，都可以对信息进行解密，所以这种私钥“加密”的信息，起不到保密的作用。只可以用来验证信息来源的唯一性，这个过程通常叫做 签名 和 验签。<br>私钥和公钥还有一个主要特点：公钥是通过私钥生成的，通过公钥很难推断出私钥，这样由于私钥的唯一性，可以做到信息保密。<br>总结一下口诀: 公钥加密，私钥解密；私钥签名，公钥验签 。<br>同样使用openssl工具创建非对称加密的私钥:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> openssl genrsa -out private.pem 1024</span></span><br><span class="line">Generating RSA private key, 1024 bit long modulus</span><br><span class="line">...............++++++</span><br><span class="line">.++++++</span><br><span class="line">e is 65537 (0x10001)</span><br><span class="line"><span class="meta">#</span><span class="bash"> cat private.pem</span></span><br><span class="line">-----BEGIN RSA PRIVATE KEY-----</span><br><span class="line">MIICXAIBAAKBgQDj73NhxbtD0lNJtYA5bWrMRKYhN07r6BYOKqsFMm9N91ZtvW/R</span><br><span class="line">7w87XO6WSt5uqVzBgQAHshQZNh0PNeBp8DpwIQYArG9x/ZZhZnTIsD3wUpbMbp5E</span><br><span class="line">EF4IBgw1284IKtpvV8a7HJzNchl4//bFGkAU/flIP1Upl6ZkOMk6KP76wQIDAQAB</span><br><span class="line">AoGALAqdWbvyBhXCoBBg2TfKFfQBwZNFPZHXiR83ckafeQocehHLZF3zrH21X/bR</span><br><span class="line">acJxuLXrQpFnDsQE82ZumSmgsKJK27yKIrf4eM7IKB0n6vK8WK9V+3L2FFg+p19i</span><br><span class="line">v9sA/sXZuJ7tNmXcbk3Vsqgv0ZRcro1I5PKZJUKZU3yoakECQQD9prACGI6igdMQ</span><br><span class="line">2YhZvuZPZ1zQPjuCBG046+WKXKFUO/IrLJbvvmpz218wzKdL/24A/dZwZHs/KOOh</span><br><span class="line">FYf11DoJAkEA5gvM98VOA+dGmf/KGy5Fx3CgFW+lEojDaNAFo1ZJY1kr6FJIY9H3</span><br><span class="line">n1mxXbXNObvBKi5FMQVgvsiCCHotw0BI+QJBALCxbgh3vNydXT9umZoS7nK/yRrT</span><br><span class="line">TzbaCI/PXB4POt7nx2Gl9Rra5WMBnQTse1nofGO6b6fphyVPQYpT6lsn1KkCQGg7</span><br><span class="line">JI2G6kg+e/C+wtX560foMcBEq6hwKwnMZyGQsQPAnXJQBdikg+vBeemZu/jSpzzz</span><br><span class="line">ZgpGA4Wt16z7nsx+zhECQCnN3OhSpOlT9Pq8CVXDMVNilutSbnNuO996k89Jg/zR</span><br><span class="line">s1XIN4zfEDxWLJi9N/iZ0BK7JnwtKMZ3Z+9IStWGqkg=</span><br><span class="line">-----END RSA PRIVATE KEY-----</span><br></pre></td></tr></table></figure><br>根据私钥创建公钥:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> openssl rsa -<span class="keyword">in</span> private.pem -pubout -out public.pem</span></span><br><span class="line">writing RSA key</span><br><span class="line"><span class="meta">#</span><span class="bash"> cat public.pem</span></span><br><span class="line">-----BEGIN PUBLIC KEY-----</span><br><span class="line">MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDj73NhxbtD0lNJtYA5bWrMRKYh</span><br><span class="line">N07r6BYOKqsFMm9N91ZtvW/R7w87XO6WSt5uqVzBgQAHshQZNh0PNeBp8DpwIQYA</span><br><span class="line">rG9x/ZZhZnTIsD3wUpbMbp5EEF4IBgw1284IKtpvV8a7HJzNchl4//bFGkAU/flI</span><br><span class="line">P1Upl6ZkOMk6KP76wQIDAQAB</span><br><span class="line">-----END PUBLIC KEY-----</span><br></pre></td></tr></table></figure><br>对信息进行加密的部分过程:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> openssl rsautl -sign -<span class="keyword">in</span> license.md5 -out license -inkey private.pem</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> base64 license</span></span><br><span class="line">hkBRNnalRvi21K+dnOvAg8W3V/ntheouUhlJelwvzzW3CMZbKw08z4TQzV4Qkx0DU7YgiUOdCNvn</span><br><span class="line">KWRdxVnj4jatqLZeMJp9BOYI3SrdzsQETzXQOV/37L+s6nA4T+EM8YfsdgoEfyt5GYezBqQW3Iii</span><br><span class="line">fppNQ4e67qSTBqpfD88=</span><br></pre></td></tr></table></figure><br>在非对称加密过程中还存在2个问题:</p>
+<blockquote>
+<p>1、 私钥加密无法达到保密效果，服务端响应信息无法加密。<br>  2、要求明文信息必须小于秘钥长度。</p>
+</blockquote>
+<p>一种容易想到的方法是让每个客户端也生成一对私钥+公钥，这样服务端使用客户端的公钥加密响应信息。这种方法的副作用是服务端需要保存所有的客户端公钥，实现成本较高，一般非金融类业务不会这样处理。对于明文信息必须小于秘钥长度，可采用明文分段方式进行加密，这种方法的副作用是效率更低。</p>
+<p>比较好的解决上述2个问题的方法是把对称加密和非对称加密结合起来。客户端随机生成一个对称秘钥，然后使用公钥加密秘钥，服务端收到密文信息后解密得到秘钥。服务端使用秘钥对响应信息进行对称加密，客户端使用秘钥解密信息。这样就解决了服务端响应信息的加密问题。以后客户端再发送请求信息，都可以使用这个秘钥进行对称加密，同时也解决非对称加密效率低和秘钥长度的问题。流程如下:</p>
+<p>步骤客户端服务端1生成对称秘钥-2公钥加密对称秘钥-3-私钥解密获得对称秘钥4使用对称秘钥加密请求明文-5-使用对称秘钥解密请求密文6-使用对称秘钥加密响应明文7使用对称秘钥解密响应明文-</p>
+<h2 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h2><p>使用对称加密+非对称加密的结合，还有秘钥伪造的安全问题。假设客户端请求A网站服务，需要先获取A网站的公钥。如果在网络传输中B网站使用自己的公钥进行伪装替换，客户端错误的把B网站的公钥当做A网站的公钥。那么客户端发送给A网站的信息就可以被B网站窃取。</p>
+<p>解决的办法就需要使用 证书。由一个专业的安全机构，给A网站颁发一个证书。证书实际上就是把A网站的公钥使用自己的私钥包装一下。同时这个机构还会和操作系统配合，提前在操作系统中预制自己的公钥。这样通讯中获取到A站点的证书后，使用操作系统提供的安全机构公钥解密得到A站点的公钥，从而解决公钥伪造问题。以上处理方式就是https协议的安全基础。</p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>摘要一个应用场景是公示信息的完整性。下载网站在提供软件下载的时候，一般还会提供一个数字摘要，用来防止流氓软件捆绑。比如下面pypy软件包的摘要信息:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pypy3.9-v3.7.8 sha256:</span><br><span class="line">---------------------</span><br><span class="line">89dd0399a89a04b58c22e9b773747258807996bd5071dbf996a85bf8af432393  pypy3.9-v7.3.8rc1-linux32.tar.bz2</span><br><span class="line">f3f90203afcf7ee359e8c8a871bfaa06d96f926781fd94fb81f471dcd32f7332  pypy3.9-v7.3.8rc1-linux64.tar.bz2</span><br><span class="line">9a5d7217d8173bbdf1c7351b34651fee0596b0bcfe6fe4becae150d4a5469487  pypy3.9-v7.3.8rc1-osx64.tar.bz2</span><br><span class="line">4651d804341046be824af0ca35b7ebbbb6d5cdcef0d4a373891398dba182d010  pypy3.9-v7.3.8rc1-src.tar.bz2</span><br><span class="line">c4db62a854c2cc994d46fac0105a8e3bd4273093b9844c1f7cb69118fae6df72  pypy3.9-v7.3.8rc1-src.zip</span><br><span class="line">ad214e4a44c893dc503e7e0b6f6bdfa7523db80b9d4890523f8ee96339d05fc9  pypy3.9-v7.3.8rc1-win64.zip</span><br></pre></td></tr></table></figure></p>
+<p>通过特定的散列算法，对 pypy3.9-v7.3.8rc1-linux32.tar.bz2 计算得到值为 89dd0399a89a04b58c22e9b773747258807996bd5071dbf996a85bf8af432393 的摘要。下载完成后比较一下摘要就知道软件包的完整性。</p>
+<p>下面是另外一个摘要算法md5的示例:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ echo &quot;123456789&quot; | md5sum</span><br><span class="line">b2cfa4183267af678ea06c7407d4d6d8  -</span><br><span class="line">➜  ~ echo &quot;123456789&quot; | md5sum</span><br><span class="line">b2cfa4183267af678ea06c7407d4d6d8  -</span><br><span class="line">➜  ~ echo &quot;1&quot; | md5sum</span><br><span class="line">b026324c6904b2a9cb4b88d6d61c81d1  -</span><br><span class="line">➜  ~ echo &quot;123456780&quot; | md5sum</span><br><span class="line">9af763c0ffc99c565a6a9460e1a2ca7e  -</span><br></pre></td></tr></table></figure></p>
+<p>散列函数形成的摘要都具有下面几个特点:</p>
+<p>1、单向 只能够从tar包得到一个摘要值，从摘要值是无法还原完整的tar包<br>2、结果确定 同一个算法对每个输入的计算结果是确定<br>3、结果定长 可以看到字符串”1”和”123456789”得到的结果长度都是一样的<br>4、结果分散无规律 可以看到字符串”123456780”和”123456789”，仅仅变动了1个字符，摘要却变化非常大<br>5、效率高 工程上摘要的计算非常快速</p>
+<p>下面是摘要算法的一些应用场景。</p>
+<h2 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h2><p>因为摘要算法的确定性，所以可以用来进行去重。对于数据是否变更，仅仅需要比较信息的摘要指是否变动:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if data[&quot;targets_md5&quot;] != self.route_data.get(&quot;targets_md5&quot;, None):</span><br><span class="line">    do_update()</span><br><span class="line">else:</span><br><span class="line">    log.info(&quot;update_router_info targets not changed !&quot;)</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure></p>
+<h2 id="密码保护"><a href="#密码保护" class="headerlink" title="密码保护"></a>密码保护</h2><p>系统存储用户密码时，并不记录密码本身，仅记录密码的散列值。这样只有用户自己知道密码的明文。校验密码时，只要输入的密码正确，得到的散列值一定是一样的，表示校验通过。即使系统的数据库不小心产生泄露问题，也不会导致用户的密码泄露。<br>很多用户习惯使用同一个密码访问所有网站，比如A网站和B网站使用同一个密码，假设网站都是明文存储用户名和密码。A网站是大站点，网络安全处理比较好。但是B网站是小站点，发送了数据库泄露。这样攻击者利用盗取数据中的用户名和密码，从而拿到用户在A网站的重要信息。<br>md5算中123456789的值固定是b2cfa4183267af678ea06c7407d4d6d8，所以即使使用散列存储，也可以反向推断值为b2cfa4183267af678ea06c7407d4d6d8的密码明文是123456789。这种攻击方法一般称为 彩虹表，就是利用一些常用密码的散列值进行推测密码明文。解决这个问题的方法是 加盐 。加盐是一个通俗说法，利用散列算法的分散特性，在明文中混入一个其它数据，这样得到密文就会产生大的变化。校验的时候只要保证使用相同的盐，就可以确定明文是正确。</p>
+<blockquote>
+<p>明文+盐值 —&gt; 密文</p>
+</blockquote>
+<h2 id="接口签名"><a href="#接口签名" class="headerlink" title="接口签名"></a>接口签名</h2><p>摘要算法还可以用来做服务之间接口的安全认证。比如某个接口的参数如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">appid： wxd930ea5d5a258f4f</span><br><span class="line">mch_id： <span class="number">10000100</span></span><br><span class="line">device_info： <span class="number">1000</span></span><br><span class="line">body： test</span><br><span class="line">nonce_str： ibuaiVcKdpRxkhJA</span><br></pre></td></tr></table></figure><br>对接口的参数信息进行拼接，形成一个原始的字符串:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stringA=<span class="string">&quot;appid=wxd930ea5d5a258f4f&amp;body=test&amp;device_info=1000&amp;mch_id=10000100&amp;nonce_str=ibuaiVcKdpRxkhJA&quot;</span>;</span><br></pre></td></tr></table></figure><br>结合参数信息和秘钥形成一个摘要签名:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MD5签名方式：</span><br><span class="line">stringSignTemp=stringA+<span class="string">&quot;&amp;key=192006250b4c09247ec02edce69f6a2d&quot;</span> <span class="comment">//注：key为商户平台设置的密钥key</span></span><br><span class="line">sign=MD5(stringSignTemp).toUpperCase()=<span class="string">&quot;9A0A8659F005D6984697E2CA0A9CF3B7&quot;</span> <span class="comment">//注：MD5签名方式</span></span><br></pre></td></tr></table></figure><br>因为秘钥进行双方服务器存放，不进过网络传输。所以每个请求可以通过验证签名确定来源和信息的完整性。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>本文我们了解了密码学的一些应用场景和解决问题的目的。目的这个很重要，可以让我们知道 加密，签名，摘要 都在保护什么。加密是保护信息的私密性，签名是保护信息来源真实性，摘要是保护信息的完整性。进而可以根据自己的需求，灵活的应用，比如创建一个自己的授权证书license。<br>下一节我会介绍一些算法的具体实现，以及如何实现一个license。</p>
+<blockquote id="fn_密码学">
+<sup>密码学</sup>. 转自 <a target="_blank" rel="noopener" href="https://juejin.cn/post/7064372860990521357">游戏不存在</a><a href="#reffn_密码学" title="Jump back to footnote [密码学] in the text."> &#8617;</a>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:507566350@qq.com">小狐仙</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6/">http://yoursite.com/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com" target="_blank">Hiraeth</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8B/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">密码学下</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/22/%E5%B1%85%E9%85%92%E5%B1%8B%E7%9A%84hexo%E7%9A%84%E4%BC%98%E5%8C%96%E4%B9%8B%E8%B7%AFo/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">居酒屋hex的优化之路o</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/tx.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">小狐仙</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">殷勤昨夜三更雨，又得浮生一日凉</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4"><span class="toc-number">1.</span> <span class="toc-text">安全防护</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E5%92%8C%E7%AD%BE%E5%90%8D"><span class="toc-number">2.</span> <span class="toc-text">加密和签名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%81%E4%B9%A6"><span class="toc-number">3.</span> <span class="toc-text">证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">4.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%BB%E9%87%8D"><span class="toc-number">5.</span> <span class="toc-text">去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4"><span class="toc-number">6.</span> <span class="toc-text">密码保护</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%AD%BE%E5%90%8D"><span class="toc-number">7.</span> <span class="toc-text">接口签名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">8.</span> <span class="toc-text">小结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/06/24/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" title="学习计划"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/'" alt="学习计划"/></a><div class="content"><a class="title" href="/2022/06/24/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" title="学习计划">学习计划</a><time datetime="2022-06-24T02:19:01.000Z" title="发表于 2022-06-24 10:19:01">2022-06-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8B/" title="密码学下"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/'" alt="密码学下"/></a><div class="content"><a class="title" href="/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8B/" title="密码学下">密码学下</a><time datetime="2022-05-22T11:58:36.000Z" title="发表于 2022-05-22 19:58:36">2022-05-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6/" title="密码学"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/'" alt="密码学"/></a><div class="content"><a class="title" href="/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6/" title="密码学">密码学</a><time datetime="2022-05-22T11:58:21.000Z" title="发表于 2022-05-22 19:58:21">2022-05-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/22/%E5%B1%85%E9%85%92%E5%B1%8B%E7%9A%84hexo%E7%9A%84%E4%BC%98%E5%8C%96%E4%B9%8B%E8%B7%AFo/" title="居酒屋hex的优化之路o"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/'" alt="居酒屋hex的优化之路o"/></a><div class="content"><a class="title" href="/2022/05/22/%E5%B1%85%E9%85%92%E5%B1%8B%E7%9A%84hexo%E7%9A%84%E4%BC%98%E5%8C%96%E4%B9%8B%E8%B7%AFo/" title="居酒屋hex的优化之路o">居酒屋hex的优化之路o</a><time datetime="2022-05-22T06:15:16.000Z" title="发表于 2022-05-22 14:15:16">2022-05-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/22/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-email%E8%AF%A6%E8%A7%A3/" title="Java网络编程-email详解"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/'" alt="Java网络编程-email详解"/></a><div class="content"><a class="title" href="/2022/05/22/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-email%E8%AF%A6%E8%A7%A3/" title="Java网络编程-email详解">Java网络编程-email详解</a><time datetime="2022-05-22T05:56:14.000Z" title="发表于 2022-05-22 13:56:14">2022-05-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 小狐仙</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})
+setTimeout(function(){preloader.endLoading();}, 3000);</script></div><div class="js-pjax"></div><script async src="//at.alicdn.com/t/font_2784788_tud88ihttq.js"></script><script defer src="/live2d-widget/autoload.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
