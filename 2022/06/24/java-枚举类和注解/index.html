@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>java-枚举类和注解 | 小狐仙</title><meta name="author" content="小狐仙,507566350@qq.com"><meta name="copyright" content="小狐仙"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="注解1、jdk5.0新增的功能2、Annotation 其实就是代码里面的特殊标记，这些标记可以在编译，类加载，运行时被加载，并在程序员不改变原逻辑的情况下，在源文件中嵌入一些补充信息。3、在javaSe中，注解的使用目的比较简单，列如标记过时的功能，忽略警告等，在javaEE中注解占据更重要的的角色，列如来配置应用程序的人任何切面，替代SE遗留的大量xml配置和繁重代码。 内置的基本注解 jdk">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java-枚举类和注解">
+<meta property="og:url" content="http://yoursite.com/2022/06/24/java-%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%92%8C%E6%B3%A8%E8%A7%A3/index.html">
+<meta property="og:site_name" content="小狐仙">
+<meta property="og:description" content="注解1、jdk5.0新增的功能2、Annotation 其实就是代码里面的特殊标记，这些标记可以在编译，类加载，运行时被加载，并在程序员不改变原逻辑的情况下，在源文件中嵌入一些补充信息。3、在javaSe中，注解的使用目的比较简单，列如标记过时的功能，忽略警告等，在javaEE中注解占据更重要的的角色，列如来配置应用程序的人任何切面，替代SE遗留的大量xml配置和繁重代码。 内置的基本注解 jdk">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/transparent">
+<meta property="article:published_time" content="2022-06-24T10:48:52.000Z">
+<meta property="article:modified_time" content="2022-06-24T15:50:35.436Z">
+<meta property="article:author" content="小狐仙">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/transparent"><link rel="shortcut icon" href="/img/%E9%9B%AA%E5%B1%B1.png"><link rel="canonical" href="http://yoursite.com/2022/06/24/java-%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%92%8C%E6%B3%A8%E8%A7%A3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-24 23:50:35'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="小狐仙" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/tx.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xingzhuangdianzhui"></use></svg><span> 小狐狸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yezi-1"></use></svg><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fenlei"></use></svg><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/List/Music/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yinle"></use></svg><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/List/Movie/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhuizhuiju"></use></svg><span> Movie</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yezi-1"></use></svg><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gufengwujianzhongguofengwenfangsibaobimaobi_huaban_huaban"></use></svg><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/back/"><svg class="icon" aria-hidden="true"><use xlink:href="#iconfont icon-jilu"></use></svg><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background: transparent"><nav id="nav"><span id="blog_name"><a id="site-name" onclick="btf.scrollToDest(0, 500)" data-title="欢迎光临糖果屋，愿你有愉快的一天">java-枚举类和注解</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-xingzhuangdianzhui"></use></svg><span> 小狐狸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yezi-1"></use></svg><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fenlei"></use></svg><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/List/Music/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yinle"></use></svg><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/List/Movie/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhuizhuiju"></use></svg><span> Movie</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yezi-1"></use></svg><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gufengwujianzhongguofengwenfangsibaobimaobi_huaban_huaban"></use></svg><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/back/"><svg class="icon" aria-hidden="true"><use xlink:href="#iconfont icon-jilu"></use></svg><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">java-枚举类和注解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-24T10:48:52.000Z" title="发表于 2022-06-24 18:48:52">2022-06-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-24T15:50:35.436Z" title="更新于 2022-06-24 23:50:35">2022-06-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="java-枚举类和注解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>1、jdk5.0新增的功能<br>2、Annotation 其实就是代码里面的特殊标记，这些标记可以在编译，类加载，运行时被加载，并在程序员不改变原逻辑的情况下，在源文件中嵌入一些补充信息。<br>3、在javaSe中，注解的使用目的比较简单，列如标记过时的功能，忽略警告等，在javaEE中注解占据更重要的的角色，列如来配置应用程序的人任何切面，替代SE遗留的大量xml配置和繁重代码。</p>
+<h3 id="内置的基本注解"><a href="#内置的基本注解" class="headerlink" title="内置的基本注解"></a>内置的基本注解</h3><blockquote>
+<p>jdk内置的三个基本注解<br>@Override:限定重写父类方法，该注解只能用于方法<br>@Deprecated:用于表示所修饰的元素(类方法等)已过时，通常是因为所修饰的结构危险<br>@SuppressWarnings:抑制编译器警告</p>
+</blockquote>
+<h3 id="自定义注解注解"><a href="#自定义注解注解" class="headerlink" title="自定义注解注解"></a><font color="red">自定义注解<sup><a href="#fn_注解" id="reffn_注解">注解</a></sup></font></h3><blockquote>
+<p>①注解声明为:@interface,参照@SuppressWarnings定义<br>Annotation的成员变量在Annotation的定义中为无参方法的形式来声明其值定义了该成员的名字和类型,配置类型为八种基本数据类型(一般情况下只有一个成员变量参数名使用value(),默认值设置则用<font color="red">default&lt;/font &gt;来)<br>②内部定义成员,通常使用value来表示<br>③可以指定成员的默认值,使用defalu来定义<br>④如果自定义注解没有成员,则是一个<font color="blue">标识</font>作用</p>
+</blockquote>
+<font color="red">如果注解有成员,在使用注解时需要传入值</font>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个注解,传入一个字符串给这个注解</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation&#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="title">defalut</span><span class="params">(<span class="string">&quot;words&quot;</span>)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用这个注解</span></span><br><span class="line"><span class="meta">@MyAnnotation(value=&quot;hellos&quot;)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">person</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">person</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name=name;</span><br><span class="line">        <span class="keyword">this</span>.age=age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">walk</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;人走路!&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><p>元Annotation用于修饰其他Annotation的定义(元数据<sup><a href="#fn_元数据" id="reffn_元数据">元数据</a></sup>)<br>jdk5.0提供了4个标准的meta-Annotation的类型分别是</p>
+<blockquote>
+<p><font color="red">@Retention</font>:只能用于修饰一个Annotation定义,用于指定该Annotation的生命周期,@Retention包含一个<font color="red">RetentionPolicy</font>类型的成员变量,使用时必须为其指定该value成员变量指定的值</p>
+<blockquote>
+<p><font color="red">RetentionPolicy.SOURCE:</font>在源文件中有效(即源文件保留),编译器直接丢弃这种策略的注释<br>   <font color="red">RetentionPolicy.CLASS:</font>在class文件中有效(即class保留),当运行java程序时,JVM不会保留注解,这是默认值<br>   <font color="red">RetentionPolicy.RUNTIME:</font>在运行时有效(即运行时保留),当运行java程序时,JVM会保留注解,程序可以通过反射获得该注解<br>   <img src="img/RetentionPolicy流程.png"><br>   <img src="img/RetentionPolicy中的枚举类.png">  </p>
+</blockquote>
+<p><font color="red">@Target</font>:用来修饰Annotation定义,用于指定被修饰的Annotation能用于修饰哪些程序元素,@Target也包含一个名为value的成员变量</p>
+<blockquote>
+<p>详细如下↓</p>
+</blockquote>
+</blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>取值(ElementType)</th>
+<th></th>
+<th>取值(ElementType)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CONSTRUCTOR</td>
+<td>用于描述构造器</td>
+<td>PACKAGE</td>
+<td>用于描述包</td>
+</tr>
+<tr>
+<td>FIELD</td>
+<td>用于描述域</td>
+<td>PARAMETER</td>
+<td>用于描述参数</td>
+</tr>
+<tr>
+<td>LOCAL_VARIABLE</td>
+<td>用于描述局部变量</td>
+<td>TRPE</td>
+<td>用于描述类,接口(包含注解类型)或enum声明</td>
+</tr>
+<tr>
+<td>METHOD</td>
+<td>用于描述方法</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img src="img/Target枚举类.png"></p>
+<blockquote>
+<p><font color="red">@Documented</font>:表示所修饰的Annotation类会被Javadoc提取为文档</p>
+<p><font color="red">@Inherited</font>:被它修饰的Annotation会具有<font color="red">继承性</font>,如果某类被注解了Inherited及其子类会自动继承父类级别的注解</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Text</span></span><br><span class="line"><span class="comment">//通过反射获取注解信息</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">textGetAnnotation</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Class clazz Student.class;</span><br><span class="line">    Annotation[] annotation clazz.getAnnotation();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;annotation.length;i++&gt;)&#123;</span><br><span class="line">        System.out.println(annotation[i])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote id="fn_注解">
+<sup>注解</sup>. 自定义注解必须配上注解信息处理流程才有意义(反射实现)<a href="#reffn_注解" title="Jump back to footnote [注解] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_元数据">
+<sup>元数据</sup>. 在数据库中对于现有数据的修饰<a href="#reffn_元数据" title="Jump back to footnote [元数据] in the text."> &#8617;</a>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:507566350@qq.com">小狐仙</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2022/06/24/java-%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%92%8C%E6%B3%A8%E8%A7%A3/">http://yoursite.com/2022/06/24/java-%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%92%8C%E6%B3%A8%E8%A7%A3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com" target="_blank">小狐仙</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/transparent" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/06/24/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"><img class="next-cover" src="/transparent" onerror="onerror=null;src='/'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">学习计划</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/tx.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">小狐仙</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">殷勤昨夜三更雨，又得浮生一日凉</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">注解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.1.</span> <span class="toc-text">内置的基本注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text">自定义注解注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.3.</span> <span class="toc-text">元注解</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/06/24/java-%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%92%8C%E6%B3%A8%E8%A7%A3/" title="java-枚举类和注解"><img src="/transparent" onerror="this.onerror=null;this.src='/'" alt="java-枚举类和注解"/></a><div class="content"><a class="title" href="/2022/06/24/java-%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%92%8C%E6%B3%A8%E8%A7%A3/" title="java-枚举类和注解">java-枚举类和注解</a><time datetime="2022-06-24T10:48:52.000Z" title="发表于 2022-06-24 18:48:52">2022-06-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/24/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" title="学习计划"><img src="/transparent" onerror="this.onerror=null;this.src='/'" alt="学习计划"/></a><div class="content"><a class="title" href="/2022/06/24/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" title="学习计划">学习计划</a><time datetime="2022-06-24T02:19:01.000Z" title="发表于 2022-06-24 10:19:01">2022-06-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8B/" title="密码学下"><img src="/transparent" onerror="this.onerror=null;this.src='/'" alt="密码学下"/></a><div class="content"><a class="title" href="/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8B/" title="密码学下">密码学下</a><time datetime="2022-05-22T11:58:36.000Z" title="发表于 2022-05-22 19:58:36">2022-05-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6/" title="密码学"><img src="/transparent" onerror="this.onerror=null;this.src='/'" alt="密码学"/></a><div class="content"><a class="title" href="/2022/05/22/%E5%AF%86%E7%A0%81%E5%AD%A6/" title="密码学">密码学</a><time datetime="2022-05-22T11:58:21.000Z" title="发表于 2022-05-22 19:58:21">2022-05-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/22/%E5%B1%85%E9%85%92%E5%B1%8B%E7%9A%84hexo%E7%9A%84%E4%BC%98%E5%8C%96%E4%B9%8B%E8%B7%AFo/" title="居酒屋hex的优化之路o"><img src="/transparent" onerror="this.onerror=null;this.src='/'" alt="居酒屋hex的优化之路o"/></a><div class="content"><a class="title" href="/2022/05/22/%E5%B1%85%E9%85%92%E5%B1%8B%E7%9A%84hexo%E7%9A%84%E4%BC%98%E5%8C%96%E4%B9%8B%E8%B7%AFo/" title="居酒屋hex的优化之路o">居酒屋hex的优化之路o</a><time datetime="2022-05-22T06:15:16.000Z" title="发表于 2022-05-22 14:15:16">2022-05-22</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 小狐仙</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})
+setTimeout(function(){preloader.endLoading();}, 3000);</script></div><div class="js-pjax"></div><script async src="//at.alicdn.com/t/font_2784788_tud88ihttq.js"></script><script defer src="/live2d-widget/autoload.js"></script><script src="/js/bj/background.js"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
