@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>小狐仙</title>
+  <title>Serendipity</title>
   <icon>https://www.gravatar.com/avatar/f134cc5c44704ea724b8cc60781a4b82</icon>
   
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2022-06-25T08:40:44.981Z</updated>
+  <updated>2024-09-10T06:52:04.937Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>小狐仙</name>
+    <name>Serendipity</name>
     <email>507566350@qq.com</email>
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>魔改记录</title>
+    <link href="http://yoursite.com/2024/09/10/%E9%AD%94%E6%94%B9%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2024/09/10/%E9%AD%94%E6%94%B9%E8%AE%B0%E5%BD%95/</id>
+    <published>2024-09-10T06:52:04.000Z</published>
+    <updated>2024-09-10T06:52:04.937Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>java-集合</title>
@@ -370,26 +383,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;稀疏数组和队列&quot;&gt;&lt;a href=&quot;#稀疏数组和队列&quot; class=&quot;headerlink&quot; title=&quot;稀疏数组和队列&quot;&gt;&lt;/a&gt;稀疏数组和队列&lt;/h2&gt;&lt;h4 id=&quot;需求编写一个五子棋程序中，有存盘退出和续上盘功能&quot;&gt;&lt;a href=&quot;#需求编写一个五子棋</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构概念与引入</title>
-    <link href="http://yoursite.com/2022/05/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%BC%95%E5%85%A5/"/>
-    <id>http://yoursite.com/2022/05/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%BC%95%E5%85%A5/</id>
-    <published>2022-05-22T05:45:30.000Z</published>
-    <updated>2022-05-22T05:59:46.788Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="数据结构与算法的关系"><a href="#数据结构与算法的关系" class="headerlink" title="数据结构与算法的关系"></a>数据结构与算法的关系</h2><pre><code>数据data（structure）是一门研究组织数据的方式的学科，有了编程语言也就有了数据结构，程序 = 数据结构＋算法算法就是对现实事务进行高度抽象数据结构是算法的基础</code></pre><p><font color=blue> 实际开发遇到的问题</font>。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    String str </span>= <span class="string">&quot;java java ,java hello hello&quot;</span></span><br><span class="line">    String newStr = str.replaceAll(<span class="string">&quot;java&quot;</span>,<span class="string">&quot;尚佳谷&quot;</span>)</span><br><span class="line">    System.out.print(<span class="string">&quot;newStr+&quot;</span>+newStr);</span><br></pre></td></tr></table></figure></p><p>数据结构包含： 线性结构 非线结构</p><p><font color="red">线性结构</font><br>作为最常用的数据结构，其特点数据元素之间存在一对一的线性关系<br>线性结构有两种不同的存储结构，及顺序存储结构和链式存储结构。顺序存储的线性表称为顺序表，顺序表中的存储元素是连续的<br>链式存储的线性表称为链表，链表的元不一定是连续的，元素节点存放数据元素以及相邻的元素的地址信息<br>线性结构常见的有：数组、列表、链表、栈</p><p><font color="red">非线性结构</font><br>包含：二维数组、多维数组、广义表、树结构、图结构</p><!-- 待完善 -->]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;数据结构与算法的关系&quot;&gt;&lt;a href=&quot;#数据结构与算法的关系&quot; class=&quot;headerlink&quot; title=&quot;数据结构与算法的关系&quot;&gt;&lt;/a&gt;数据结构与算法的关系&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;数据data（structure）是一门研究组织数据的方式的</summary>
       
     
     
